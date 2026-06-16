@@ -9,7 +9,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            ModelSeeder::class,
+            ModelSeeder::class,  // AI models first (no dependencies)
+            AdminSeeder::class,  // Admin user (depends on users table)
         ]);
     }
 }
